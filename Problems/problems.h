@@ -14,6 +14,7 @@
 using namespace std;
 
 uint64_t PE66();
+uint64_t PE68();
 uint64_t PE516();
 uint64_t PE518();
 uint64_t PE577();
