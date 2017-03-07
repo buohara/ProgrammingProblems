@@ -117,6 +117,7 @@
     <ClCompile Include="PE577.cpp" />
     <ClCompile Include="PE66.cpp" />
     <ClCompile Include="PE68.cpp" />
+    <ClCompile Include="PE75.cpp" />
     <ClCompile Include="primes.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
