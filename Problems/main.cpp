@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    uint64_t result = PE75();
+    uint32_t result = PE77();
     printf("Done!\n");
     return 0;
 }
