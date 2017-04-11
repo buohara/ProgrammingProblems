@@ -20,3 +20,4 @@ uint32_t PE77();
 uint64_t PE516();
 uint64_t PE518();
 uint64_t PE577();
+uint32_t PE587();
