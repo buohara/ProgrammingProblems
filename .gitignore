@@ -240,3 +240,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+*.lib
+/Problems/mpir.h
+/Problems/mpirxx.h

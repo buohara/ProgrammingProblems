@@ -51,6 +51,12 @@
     <ClCompile Include="PE83.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PE91.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PE104.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">
@@ -60,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="problems.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mpir.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
