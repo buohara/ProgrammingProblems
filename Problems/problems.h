@@ -23,6 +23,7 @@ uint32_t PE91();
 uint32_t PE96();
 
 uint32_t PE104();
+uint64_t PE120();
 
 uint64_t PE516();
 uint64_t PE518();
