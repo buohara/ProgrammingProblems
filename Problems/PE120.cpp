@@ -1,7 +1,7 @@
 #include "problems.h"
 
 /**
- * PE120 - Find the max R of R = (a + 1)^N + (a - 1)^N for for all N and
+ * PE120 - Find the max R of R = ((a + 1)^N + (a - 1)^N) mod a^2 for for all N and
  * 3 <= a <= 100.
  *
  * The binomial expansions cancel odd/even powers of a depending on
