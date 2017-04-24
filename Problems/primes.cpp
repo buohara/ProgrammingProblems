@@ -282,3 +282,43 @@ uint32_t primePi(uint32_t exponent)
 
     return piVals[exponent];
 }
+
+/**
+ * factorSieve - Perform a prime sieve while storing prime factorizations
+ * as we go.
+ *
+ * @param max Max value to factor.
+ * @param values Out. A list from 0 - max with prime factorizations. 
+ *
+ * @return Number of primes up to 10^exponent.
+ */
+
+void factorSieve(uint32_t max, vector<vector<primePower>> &values)
+{
+    values.resize(max + 1);
+    values[1].push_back({ 1, 1 });
+
+    for (uint32_t i = 2; i <= max; i++)
+    {
+        if (values[i].size() == 0)
+        {
+            values[i].push_back({ i, 1 });
+            uint32_t tmp = 2 * i;
+
+            while (tmp <= max)
+            {
+                uint32_t tmp2 = tmp;
+                uint32_t pwr = 0;
+
+                while (tmp2 % i == 0)
+                {
+                    pwr++;
+                    tmp2 /= i;
+                }
+
+                values[tmp].push_back({ i, pwr });
+                tmp += i;
+            }
+        }
+    }
+}
