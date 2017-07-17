@@ -75,6 +75,9 @@
     <ClCompile Include="PE187.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PE203.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">
