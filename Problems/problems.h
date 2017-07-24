@@ -10,7 +10,6 @@
 
 #include "primes.h"
 #include "utils.h"
-#include "mpirxx.h"
 
 using namespace std;
 
@@ -31,7 +30,11 @@ uint32_t PE187();
 
 uint64_t PE203();
 
+uint32_t PE329();
+
 uint64_t PE516();
 uint64_t PE518();
 uint64_t PE577();
 uint32_t PE587();
+
+void TestMetropolis();

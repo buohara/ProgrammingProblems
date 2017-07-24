@@ -1,5 +1,13 @@
 #include "problems.h"
 
+/**
+ * PE203 - Find the sum of squarefree binomial coefficient's in the first 51 rows of Pascal's triangle.
+ *
+ * Pretty straight-forward. First, compute an array of prime squares up to 1e6. Next, compute the first
+ * 51 rows of Pascal's triangle and store unique values. Then, loop through these unique values and trial
+ * divide the prime squares. Sum any values that can't be divided by a prime square.
+ */
+
 uint64_t PE203()
 {
     const uint64_t maxRows = 51;

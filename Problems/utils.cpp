@@ -45,6 +45,28 @@ uint64_t gcd64(uint64_t a, uint64_t b)
 }
 
 /**
+ * gcdDbl - Compute greatest common divisor of doubles
+ * a and b.
+ *
+ * @param a First value.
+ * @param b Second value.
+ *
+ * @return Greatest common divisor of a and b.
+ */
+
+double gcdDbl(double a, double b)
+{
+    double c;
+    while (a >= 0.1)
+    {
+        c = a;
+        a = fmod(b, a);
+        b = c;
+    }
+    return b;
+}
+
+/**
  * getContinuedFraction - Compute terms [a0, a1, ... , aN] in continued
  * fraction exansion of sqrt(A). Determine the period length and start
  * term for continued fraction.
