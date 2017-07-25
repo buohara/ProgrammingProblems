@@ -10,7 +10,7 @@
 
 uint64_t PE518()
 {
-    uint32_t max = 1e8;
+    uint32_t max = (uint32_t)1e8;
     uint64_t sum = 0;
 
     // Load all primes up to 1e8 into a hash table for faster lookup

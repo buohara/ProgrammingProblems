@@ -76,7 +76,7 @@ uint64_t PE66()
         // Compute continued fraction expansion for
         // current number.
 
-        getContinuedFraction(i, frac);
+        getContinuedFraction((uint32_t)i, frac);
         
         uint32_t r = frac.prd - 1;
         r = r % 2 == 0 ? 2 * r + 1 : r;

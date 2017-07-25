@@ -105,7 +105,7 @@ void getContinuedFraction(uint32_t inVal, continuedFrac &frac)
 
         if (a == 2 * a0)
         {
-            frac.prd = frac.terms.size() - 1;
+            frac.prd = (uint32_t)frac.terms.size() - 1;
             return;
         }
     }
@@ -160,7 +160,7 @@ void computeKConvergent(continuedFrac &frac, uint64_t k, uint64_t &a, uint64_t &
         n2 = newTerm * n1 + n0;
         d2 = newTerm * d1 + d0;
 
-        uint64_t c = gcd(n2, d2);
+        uint64_t c = gcd((uint32_t)n2, (uint32_t)d2);
         n2 /= c;
         d2 /= c;
 

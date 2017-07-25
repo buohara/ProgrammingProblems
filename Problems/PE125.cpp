@@ -12,8 +12,8 @@
 
 uint64_t PE125()
 {
-    const uint64_t max = 1e8;
-    const uint64_t maxSq = 1e4;
+    const uint64_t max = (uint64_t)1e8;
+    const uint64_t maxSq = (uint64_t)1e4;
     uint64_t sum = 0;
 
     vector<uint64_t> squares;

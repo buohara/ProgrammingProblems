@@ -114,8 +114,8 @@ struct primeProduct
 
 uint64_t PE516()
 {
-    uint64_t max        = 1e12;
-    uint64_t maxPrime   = 1e6;
+    uint64_t max        = (uint64_t)1e12;
+    uint64_t maxPrime   = (uint64_t)1e6;
     uint64_t sum        = 0;
     uint64_t modulus    = 0x100000000;
 
@@ -127,7 +127,7 @@ uint64_t PE516()
     vector<uint32_t> primes;
 
     generateHammingNumbers(max, hammingNumbers);
-    primeSieve(maxPrime, primes);
+    primeSieve((uint32_t)maxPrime, primes);
     getHammingPrimes(hammingNumbers, primes, hammingPrimes);
 
     // Generate all combinations of products of Hamming primes less

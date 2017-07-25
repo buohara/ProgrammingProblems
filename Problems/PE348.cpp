@@ -12,8 +12,8 @@
 
 uint64_t PE348()
 {
-    uint64_t maxSquares = 1e5;
-    uint64_t maxCubes = 1e4;
+    uint64_t maxSquares = (uint64_t)1e5;
+    uint64_t maxCubes = (uint64_t)1e4;
 
     vector<uint64_t> squares;
     vector<uint64_t> cubes;
@@ -67,5 +67,5 @@ uint64_t PE348()
     }
 
     printf("%llu\n", result);
-    __debugbreak();
+    return result;
 }

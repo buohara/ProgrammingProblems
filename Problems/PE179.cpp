@@ -12,7 +12,7 @@
 
 uint32_t PE179()
 {
-    uint32_t max = 1e7;
+    uint32_t max = (uint32_t)1e7;
     vector<vector<primePower>> values;
     factorSieve(max, values);
     uint32_t cnt = 0;

@@ -32,7 +32,7 @@ struct Radical
 
 uint32_t PE124()
 {
-    uint32_t max = 1e5;
+    uint32_t max = (uint32_t)1e5;
     vector<uint32_t> primes;
     primeSieve(max, primes);
 

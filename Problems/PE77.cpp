@@ -8,9 +8,9 @@
 uint32_t PE77()
 {
     vector<uint32_t> primes;
-    const uint32_t max = 1e4;
+    const uint32_t max = (uint32_t)1e4;
     primeSieve(max, primes);
-    uint32_t numPrimes = primes.size();
+    uint32_t numPrimes = (uint32_t)primes.size();
     vector<vector<uint32_t>> counts(numPrimes + 1, vector<uint32_t>(max + 1));
 
     // There's only one way to sum to zero (i.e., an empty set of primes).

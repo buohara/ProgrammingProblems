@@ -11,7 +11,7 @@
 
 uint32_t PE187()
 {
-    uint32_t max = 1e8;
+    uint32_t max = (uint32_t)1e8;
     uint32_t cnt = 0;
 
     vector<uint32_t> primes;

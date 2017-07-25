@@ -29,7 +29,7 @@ uint32_t PE104()
         f2 = f3;
 
         str = f3.get_str();
-        uint32_t nDigits = str.size();
+        uint32_t nDigits = (uint32_t)str.size();
 
         if (nDigits >= 9)
         {
