@@ -24,6 +24,9 @@ void getContinuedFraction(uint32_t inVal, continuedFrac &frac);
 void computeKConvergent(continuedFrac &frac, uint64_t k, uint64_t &a, uint64_t &b);
 void computeKConvergentDouble(continuedFrac &frac, uint64_t k, double &a, double &b);
 
+bool isPalindromic(uint32_t value);
+bool isPalindromic64(uint64_t value);
+
 struct frac
 {
     mpz_class num;

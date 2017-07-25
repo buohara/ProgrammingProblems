@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <vector>
+#include <map>
 #include <unordered_set>
 #include <string.h>
 #include <string>
@@ -31,6 +32,7 @@ uint32_t PE187();
 uint64_t PE203();
 
 uint32_t PE329();
+uint64_t PE348();
 
 uint64_t PE516();
 uint64_t PE518();

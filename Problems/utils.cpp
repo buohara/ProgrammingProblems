@@ -237,3 +237,69 @@ void computeKConvergentDouble(continuedFrac &frac, uint64_t k, double &a, double
     a = n2;
     b = d2;
 }
+
+/**
+ * isPalindromic - Check if a number is palindromin (e.g., 12321 - yes, 12345 - no).
+ *
+ * @param value Check if this number is a palindrome.
+ *
+ * @return True if a palindrome, false otherwise.
+ */
+
+bool isPalindromic(uint32_t value)
+{
+    uint32_t digits[20];
+    uint32_t numDigits = 0;
+
+    while (value)
+    {
+        digits[numDigits++] = value % 10;
+        value /= 10;
+    }
+
+    bool isPalindrome = true;
+
+    for (uint32_t i = 0; i < numDigits / 2; i++)
+    {
+        if (digits[i] != digits[numDigits - i - 1])
+        {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+    return isPalindrome;
+}
+
+/**
+ * isPalindromic64 - Check if 64 bit number is palindromin (e.g., 12321 - yes, 12345 - no).
+ *
+ * @param value Check if this number is a palindrome.
+ *
+ * @return True if a palindrome, false otherwise.
+ */
+
+bool isPalindromic64(uint64_t value)
+{
+    uint64_t digits[20];
+    uint64_t numDigits = 0;
+
+    while (value)
+    {
+        digits[numDigits++] = value % 10;
+        value /= 10;
+    }
+
+    bool isPalindrome = true;
+
+    for (uint64_t i = 0; i < numDigits / 2; i++)
+    {
+        if (digits[i] != digits[numDigits - i - 1])
+        {
+            isPalindrome = false;
+            break;
+        }
+    }
+
+    return isPalindrome;
+}
