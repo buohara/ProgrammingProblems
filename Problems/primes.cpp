@@ -62,6 +62,62 @@ void primeSieve(uint32_t max, vector<uint32_t> &primes)
 }
 
 /**
+ * primeSieve - Use sieving to generate a list of primes betwee
+ * a min and max value, inclusive.
+ *
+ * @param min Generate primes including and above this value.
+ * @param max Generate all prime numbers up to and including this value.
+ * @param primes (out) A list of all the primes found.
+ */
+
+void primeSieve(uint32_t min, uint32_t max, vector<uint32_t> &primes)
+{
+    vector<uint32_t> scratch;
+    scratch.resize(max - min + 1, 0);
+
+    uint32_t primeCnt = 0;
+
+    for (uint32_t i = 2; i <= max / 2; i++)
+    {
+        uint32_t factor = (min / i) * i;
+        factor = 2 * i > factor ? 2 * i : factor;
+        
+        if (factor < min)
+        {
+            factor += i;
+        }
+
+        while (factor <= max)
+        {
+            scratch[factor - min] = 1;
+            factor += i;
+        }
+    }
+
+    // Count how many primes are left over.
+
+    for (uint32_t i = 0; i <= max - min; i++)
+    {
+        if (scratch[i] == 0)
+        {
+            primeCnt++;
+        }
+    }
+
+    // Put them in the output vector and done.
+
+    primes.resize(primeCnt);
+
+    for (uint32_t i = 0, j = 0; i <= max - min; i++)
+    {
+        if (scratch[i] == 0)
+        {
+            primes[j++] = i + min;
+        }
+    }
+}
+
+/**
  * primeSieve - Same as above, but put primes in a hash table
  * for quicker lookup.
  *

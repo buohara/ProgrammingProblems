@@ -303,3 +303,29 @@ bool isPalindromic64(uint64_t value)
 
     return isPalindrome;
 }
+
+/**
+ * powMod - Quickly compute b^e mod n.
+ *
+ * @param b Base value.
+ * @param e Exponent.
+ * @param n Modulus.
+ * 
+ * @return result of b^e mod n.
+ */
+
+uint32_t powMod(uint32_t b, uint32_t e, uint32_t n)
+{
+    uint32_t result = 1;
+    while (e > 0)
+    {
+        if (e % 2 == 1)
+        {
+            result = (result * b) % n;
+        }
+
+        e = e >> 1;
+        b = (b * b) % n;
+    }
+    return result;
+}
