@@ -378,3 +378,31 @@ void factorSieve(uint32_t max, vector<vector<primePower>> &values)
         }
     }
 }
+
+void factorTrialDivision(vector<uint32_t> &primes, vector<primePower> &factors, uint64_t value)
+{
+    for (uint32_t i = 0; i < primes.size(); i++)
+    {
+        uint64_t curPrime = (uint64_t)primes[i];
+
+        if (value % curPrime == 0)
+        {
+            primePower newFactor;
+            newFactor.prime = (uint32_t)curPrime;
+            newFactor.power = 0;
+
+            while (value % curPrime == 0)
+            {
+                newFactor.power++;
+                value /= curPrime;
+            }
+
+            factors.push_back(newFactor);
+        }
+
+        if (value == 1)
+        {
+            return;
+        }
+    }
+}

@@ -27,3 +27,4 @@ void primeSieve(uint32_t max, unordered_set<uint32_t> &primes);
 bool isPrime(uint64_t prime, vector<uint32_t> &primes);
 uint32_t primePi(uint32_t exponent);
 void factorSieve(uint32_t max, vector<vector<primePower>> &values);
+void factorTrialDivision(vector<uint32_t> &primes, vector<primePower> &factors, uint64_t value);
