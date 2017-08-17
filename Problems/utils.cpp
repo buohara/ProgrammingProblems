@@ -152,7 +152,6 @@ void computeKConvergent(continuedFrac &frac, uint64_t k, uint64_t &a, uint64_t &
     // Iteratively build up convergents via
     // n_n+2 = a_n+2 * n_n+1 + n_n
 
-
     for (uint64_t i = 2; i <= k; i++)
     {
         uint64_t newTerm = (uint64_t)frac.terms[(i - 1) % prd + 1];
@@ -239,7 +238,7 @@ void computeKConvergentDouble(continuedFrac &frac, uint64_t k, double &a, double
 }
 
 /**
- * isPalindromic - Check if a number is palindromin (e.g., 12321 - yes, 12345 - no).
+ * isPalindromic - Check if a number is palindromic (e.g., 12321 - yes, 12345 - no).
  *
  * @param value Check if this number is a palindrome.
  *
@@ -328,4 +327,25 @@ uint32_t powMod(uint32_t b, uint32_t e, uint32_t n)
         b = (b * b) % n;
     }
     return result;
+}
+
+/**
+ * numDigits - Get the number of digits in a number
+ *
+ * @param val The value to count digits of.
+ *
+ * @return Number of digits in val.
+ */
+
+uint32_t numDigits(uint32_t val)
+{
+    uint32_t digits = 0;
+
+    while (val > 0)
+    {
+        val /= 10;
+        digits++;
+    }
+
+    return digits;
 }
