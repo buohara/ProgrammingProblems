@@ -10,6 +10,8 @@
 #include <math.h>
 #include <queue>
 #include <functional>
+#include <complex>
+#include <cmath>
 
 #include "primes.h"
 #include "utils.h"
@@ -41,6 +43,7 @@ uint64_t PE359();
 
 uint64_t PE401();
 uint64_t PE425();
+uint64_t PE479();
 
 uint64_t PE516();
 uint64_t PE518();

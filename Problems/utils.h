@@ -1,5 +1,7 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
+
 #include <stdint.h>
 #include <stdio.h>
 #include <vector>
@@ -7,6 +9,8 @@
 #include <string>
 #include <math.h>
 #include <assert.h>
+#include <complex>
+#include <cmath>
 #include "mpirxx.h"
 
 using namespace std;
@@ -16,20 +20,6 @@ struct continuedFrac
     vector<uint32_t> terms;
     uint32_t prd;
 };
-
-uint32_t gcd(uint32_t a, uint32_t b);
-uint64_t gcd64(uint64_t a, uint64_t b);
-double gcdDbl(double a, double b);
-void getContinuedFraction(uint32_t inVal, continuedFrac &frac);
-void computeKConvergent(continuedFrac &frac, uint64_t k, uint64_t &a, uint64_t &b);
-void computeKConvergentDouble(continuedFrac &frac, uint64_t k, double &a, double &b);
-
-bool isPalindromic(uint32_t value);
-bool isPalindromic64(uint64_t value);
-
-uint32_t numDigits(uint32_t val);
-
-uint32_t powMod(uint32_t b, uint32_t e, uint32_t n);
 
 struct frac
 {
@@ -84,3 +74,16 @@ struct frac
         return result;
     }
 };
+
+uint32_t gcd(uint32_t a, uint32_t b);
+uint64_t gcd64(uint64_t a, uint64_t b);
+double gcdDbl(double a, double b);
+void getContinuedFraction(uint32_t inVal, continuedFrac &frac);
+void computeKConvergent(continuedFrac &frac, uint64_t k, uint64_t &a, uint64_t &b);
+void computeKConvergentDouble(continuedFrac &frac, uint64_t k, double &a, double &b);
+bool isPalindromic(uint32_t value);
+bool isPalindromic64(uint64_t value);
+void cubicRoots(double a, double b, double c, double d, vector<complex<double>> &roots);
+uint32_t numDigits(uint32_t val);
+uint32_t powMod(uint32_t b, uint32_t e, uint32_t n);
+int64_t powMod64(int64_t b, int64_t e, int64_t n);

@@ -330,6 +330,32 @@ uint32_t powMod(uint32_t b, uint32_t e, uint32_t n)
 }
 
 /**
+ * powMod64 - Quickly compute b^e mod n 64-bit uints.
+ *
+ * @param b Base value.
+ * @param e Exponent.
+ * @param n Modulus.
+ *
+ * @return result of b^e mod n.
+ */
+
+int64_t powMod64(int64_t b, int64_t e, int64_t n)
+{
+    int64_t result = 1;
+    while (e > 0)
+    {
+        if (e % 2 == 1)
+        {
+            result = (result * b) % n;
+        }
+
+        e = e >> 1;
+        b = (b * b) % n;
+    }
+    return result;
+}
+
+/**
  * numDigits - Get the number of digits in a number
  *
  * @param val The value to count digits of.
@@ -348,4 +374,37 @@ uint32_t numDigits(uint32_t val)
     }
 
     return digits;
+}
+
+void cubicRoots(double a, double b, double c, double d, vector<complex<double>> &roots)
+{
+    double d0 = b * b - 3.0 * a * c;
+    double d1 = 2.0 * b * b * b - 9.0 * a * b * c + 27.0 * a * a * d;
+
+    complex<double> w1 = polar(1.0, 2.0 * M_PI / 3.0);
+    complex<double> w2 = polar(1.0, 4.0 * M_PI / 3.0);
+
+    double k = d1 * d1 - 4.0 * d0 * d0 * d0;
+    complex<double> p;
+
+    if (k >= 0.0)
+    {
+        p = 0.5 * (d1 + sqrt(k));
+    }
+    else
+    {
+        p = complex<double>(0.5 * d1, 0.5 *  sqrt(-k));
+    }
+
+    complex<double> r = pow(p , 1.0 / 3.0);
+
+    complex<double> x1 = -(1.0 / (3.0 * a)) * (b + r + d0 / r);
+    complex<double> x2 = -(1.0 / (3.0 * a)) * (b + w1 * r + d0 / (w1 * r));
+    complex<double> x3 = -(1.0 / (3.0 * a)) * (b + w2 * r + d0 / (w2 * r));
+
+    roots.push_back(x1);
+    roots.push_back(x2);
+    roots.push_back(x3);
+
+    return;
 }
