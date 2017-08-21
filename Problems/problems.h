@@ -45,6 +45,7 @@ uint64_t PE401();
 uint64_t PE425();
 uint64_t PE479();
 
+uint64_t PE512();
 uint64_t PE516();
 uint64_t PE518();
 uint64_t PE577();

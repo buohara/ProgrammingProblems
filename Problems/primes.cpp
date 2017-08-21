@@ -345,8 +345,6 @@ uint32_t primePi(uint32_t exponent)
  *
  * @param max Max value to factor.
  * @param values Out. A list from 0 - max with prime factorizations. 
- *
- * @return Number of primes up to 10^exponent.
  */
 
 void factorSieve(uint32_t max, vector<vector<primePower>> &values)
@@ -378,6 +376,13 @@ void factorSieve(uint32_t max, vector<vector<primePower>> &values)
         }
     }
 }
+
+/**
+ * [factorTrialDivision Get prime factors of a value by trial division.]
+ * @param primes  A list of primes to do trival division with.
+ * @param factors Out list of prime powers of value.
+ * @param value   Value to get prime factorization for.
+ */
 
 void factorTrialDivision(vector<uint32_t> &primes, vector<primePower> &factors, uint64_t value)
 {

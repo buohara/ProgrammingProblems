@@ -5,8 +5,8 @@
  * Then compute sum on 1 <= p,k <= 10^6 of (a + b)^p * (b + c)^p * (c + a)^p.
  *
  * After computing some cubic roots, I noticed (a + b)(b + c)(c + a) formed a
- * pattern of -3, -8, -15, -24, i.e., start at three and subtract r, r + 2, r + 4.
- * So, no need to solve cubics. The sum on P can be collapsed into a geometric series
+ * sequence of -3, -8, -15, -24, i.e., start at three and subtract r, r + 2, r + 4.
+ * So, no need to solve cubics. The sum on p can be collapsed into a geometric series
  * (1 - p^n+1) / (1 - p) - 1. Compute these terms and be careful with modular arithmetic.
  */
 

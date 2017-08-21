@@ -66,6 +66,25 @@ double gcdDbl(double a, double b)
     return b;
 }
 
+uint32_t gcdExtended(uint32_t a, uint32_t b, uint32_t &x, uint32_t &y)
+{
+    if (a == 0)
+    {
+        x = 0;
+        y = 1;
+        return b;
+    }
+
+    uint32_t x1;
+    uint32_t y1;
+    uint32_t gcd = gcdExtended(b % a, a, x1, y1);
+
+    x = y1 - (b / a) * x1;
+    y = x1;
+
+    return gcd;
+}
+
 /**
  * getContinuedFraction - Compute terms [a0, a1, ... , aN] in continued
  * fraction exansion of sqrt(A). Determine the period length and start
@@ -375,6 +394,15 @@ uint32_t numDigits(uint32_t val)
 
     return digits;
 }
+
+/**
+ * [cubicRoots Compute cubic roots of ax^3 + bx^2 + cx + d]
+ * @param a     Coefficient a
+ * @param b     Coefficient b
+ * @param c     Coefficient c
+ * @param d     Coefficient d
+ * @param roots The three complex roots computed by this function.
+ */
 
 void cubicRoots(double a, double b, double c, double d, vector<complex<double>> &roots)
 {

@@ -78,6 +78,7 @@ struct frac
 uint32_t gcd(uint32_t a, uint32_t b);
 uint64_t gcd64(uint64_t a, uint64_t b);
 double gcdDbl(double a, double b);
+uint32_t gcdExtended(uint32_t a, uint32_t b, uint32_t &x, uint32_t &y);
 void getContinuedFraction(uint32_t inVal, continuedFrac &frac);
 void computeKConvergent(continuedFrac &frac, uint64_t k, uint64_t &a, uint64_t &b);
 void computeKConvergentDouble(continuedFrac &frac, uint64_t k, double &a, double &b);
