@@ -108,6 +108,9 @@
     <ClCompile Include="PE512.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PE531.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">

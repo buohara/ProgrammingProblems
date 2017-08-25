@@ -85,6 +85,25 @@ uint32_t gcdExtended(uint32_t a, uint32_t b, uint32_t &x, uint32_t &y)
     return gcd;
 }
 
+int64_t gcdExtended(int64_t a, int64_t b, int64_t &x, int64_t &y)
+{
+    if (a == 0)
+    {
+        x = 0;
+        y = 1;
+        return b;
+    }
+
+    int64_t x1;
+    int64_t y1;
+    int64_t gcd = gcdExtended(b % a, a, x1, y1);
+
+    x = y1 - (b / a) * x1;
+    y = x1;
+
+    return gcd;
+}
+
 /**
  * getContinuedFraction - Compute terms [a0, a1, ... , aN] in continued
  * fraction exansion of sqrt(A). Determine the period length and start
