@@ -114,6 +114,9 @@
     <ClCompile Include="PE571.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PE581.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">
@@ -126,6 +129,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mpir.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mpirxx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

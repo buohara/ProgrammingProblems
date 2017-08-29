@@ -357,6 +357,7 @@ void factorSieve(uint32_t max, vector<vector<primePower>> &values)
         if (values[i].size() == 0)
         {
             values[i].push_back({ i, 1 });
+            
             uint32_t tmp = 2 * i;
 
             while (tmp <= max)

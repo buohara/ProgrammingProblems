@@ -455,3 +455,58 @@ void cubicRoots(double a, double b, double c, double d, vector<complex<double>> 
 
     return;
 }
+
+/**
+ * convertBase Convert digits from base b1 to base b2.
+ *
+ * @param digitsIn  Vector of input digits in base b1.
+ * @param b1        Base of input digits.
+ * @param digitsOut Output vector to hold digits in base b2.
+ * @param b2        Base of output digits.
+ */
+
+void convertBase(
+    vector<uint64_t> &digitsIn,
+    uint64_t b1,
+    vector<uint64_t> &digitsOut,
+    uint64_t b2)
+{
+    uint64_t valBase10 = 0;
+    uint64_t e1 = digitsIn.size() - 1;
+    uint64_t e2 = 0;
+
+    for (auto digit : digitsIn)
+    {
+        valBase10 += digit * pow(b1, e1--);
+    }
+
+    e1 = (uint64_t)(log(valBase10) / log(b2));
+
+    while (valBase10)
+    {
+        e2 = (uint64_t)(log(valBase10) / log(b2));
+        uint64_t newDigit = valBase10 / pow(b2, e2);
+
+        if (e1 - e2 > 1)
+        {
+            for (uint64_t i = 0; i < e1 - e2 - 1; i++)
+            {
+                digitsOut.push_back(0);
+            }
+        }
+
+        digitsOut.push_back(newDigit);
+        valBase10 -= newDigit * pow(b2, e2);
+
+        if (e2 > 0 && valBase10 == 0)
+        {
+            while (e2 > 0)
+            {
+                digitsOut.push_back(0);
+                e2--;
+            }
+        }
+
+        e1 = e2;
+    }
+}

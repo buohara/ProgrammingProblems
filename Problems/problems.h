@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <vector>
+#include <set>
 #include <map>
 #include <unordered_set>
 #include <string.h>
@@ -51,6 +52,7 @@ uint64_t PE518();
 uint64_t PE531();
 uint64_t PE571();
 uint64_t PE577();
+uint64_t PE581();
 uint32_t PE587();
 
 void TestMetropolis();
