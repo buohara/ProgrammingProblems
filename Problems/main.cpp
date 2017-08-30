@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    PE581();
+    PE78();
     printf("Done!\n");
     return 0;
 }
