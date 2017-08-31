@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PE100.cpp" />
     <ClCompile Include="PE104.cpp" />
     <ClCompile Include="PE120.cpp" />
     <ClCompile Include="PE124.cpp" />
