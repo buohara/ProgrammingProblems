@@ -89,6 +89,7 @@ void cubicRoots(double a, double b, double c, double d, vector<complex<double>> 
 uint32_t numDigits(uint32_t val);
 uint32_t powMod(uint32_t b, uint32_t e, uint32_t n);
 int64_t powMod64(int64_t b, int64_t e, int64_t n);
+uint64_t geomSum(uint64_t r, uint64_t n);
 
 void convertBase(
     vector<uint64_t> &digitsIn,

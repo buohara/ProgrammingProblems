@@ -66,6 +66,15 @@ double gcdDbl(double a, double b)
     return b;
 }
 
+/**
+ * [gcdExtended description]
+ * @param  a [description]
+ * @param  b [description]
+ * @param  x [description]
+ * @param  y [description]
+ * @return   [description]
+ */
+
 uint32_t gcdExtended(uint32_t a, uint32_t b, uint32_t &x, uint32_t &y)
 {
     if (a == 0)
@@ -84,6 +93,15 @@ uint32_t gcdExtended(uint32_t a, uint32_t b, uint32_t &x, uint32_t &y)
 
     return gcd;
 }
+
+/**
+ * [gcdExtended description]
+ * @param  a [description]
+ * @param  b [description]
+ * @param  x [description]
+ * @param  y [description]
+ * @return   [description]
+ */
 
 int64_t gcdExtended(int64_t a, int64_t b, int64_t &x, int64_t &y)
 {
@@ -509,4 +527,16 @@ void convertBase(
 
         e1 = e2;
     }
+}
+
+/**
+ * geomSum Compute geometric series 1 + r + r^2 ... + r^n
+ * @param  r Geometric series base.
+ * @param  n Max N for geometric series.
+ * @return   Sum of geometric series.
+ */
+
+uint64_t geomSum(uint64_t r, uint64_t n)
+{
+    return (pow(r, n + 1) - 1) / (r - 1);
 }

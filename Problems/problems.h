@@ -26,6 +26,7 @@ uint32_t PE77();
 uint64_t PE78();
 uint32_t PE83();
 uint32_t PE91();
+uint64_t PE95();
 uint32_t PE96();
 
 uint32_t PE104();
