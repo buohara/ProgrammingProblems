@@ -34,6 +34,7 @@ uint32_t PE104();
 uint64_t PE108();
 uint64_t PE113();
 uint64_t PE116();
+uint64_t PE119();
 uint64_t PE120();
 uint32_t PE124();
 uint64_t PE125();
