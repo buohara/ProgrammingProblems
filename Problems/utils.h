@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <vector>
+#include <map>
 #include <string.h>
 #include <string>
 #include <math.h>
@@ -72,6 +73,29 @@ struct frac
         frac result = *this;
         result *= other;
         return result;
+    }
+};
+
+struct Binomial
+{
+    map<uint64_t, map<uint64_t, uint64_t>> coefs;
+
+    uint64_t nchoosek(uint64_t n, uint64_t k)
+    {
+        if (coefs.find(n) != coefs.end() &&
+            coefs[n].find(k) != coefs[n].end())
+        {
+            return coefs[n][k];
+        }
+
+        if ((k == 0) || (n == k))
+        {
+            coefs[n][k] = 1;
+            return coefs[n][k];
+        }
+
+        coefs[n][k] = n * nchoosek(n - 1, k - 1) / k;
+        return coefs[n][k];
     }
 };
 

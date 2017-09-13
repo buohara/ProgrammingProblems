@@ -62,6 +62,65 @@ void primeSieve(uint32_t max, vector<uint32_t> &primes)
 }
 
 /**
+ * primeSieve - Prime sieve, 64-bit version.
+ * 
+ * @param max Generate all prime numbers up to this value.
+ * @param primes (out) A list of all the primes found.
+ */
+
+void primeSieve(uint64_t max, vector<uint64_t> &primes)
+{
+    vector<uint64_t> scratch;
+    assert(max / 2 < scratch.max_size());
+    scratch.resize(max + 1, 0);
+
+    scratch[0] = 1;
+    scratch[1] = 1;
+
+    uint64_t primeCnt = 0;
+
+    // Starting at 2, loop through multiples of numbers and mark 
+    // them as composite.
+
+    for (uint64_t i = 2; i <= max / 2; i++)
+    {
+        if (scratch[i] == 1)
+        {
+            continue;
+        }
+
+        uint64_t factor = 2 * i;
+        while (factor <= max)
+        {
+            scratch[factor] = 1;
+            factor += i;
+        }
+    }
+
+    // Count how many primes are left over.
+
+    for (uint64_t i = 1; i <= max; i++)
+    {
+        if (scratch[i] == 0)
+        {
+            primeCnt++;
+        }
+    }
+
+    // Put them in the output vector and done.
+
+    primes.resize(primeCnt);
+
+    for (uint64_t i = 1, j = 0; i <= max; i++)
+    {
+        if (scratch[i] == 0)
+        {
+            primes[j++] = i;
+        }
+    }
+}
+
+/**
  * primeSieve - Use sieving to generate a list of primes betwee
  * a min and max value, inclusive.
  *

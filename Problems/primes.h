@@ -22,6 +22,7 @@ void writePrimesToFile(const char* fileName, vector<uint32_t> &primes);
 void readPrimesFromFile(const char* fileName, vector<uint32_t> &primes, uint32_t max);
 void readPrimesFromFile(const char* fileName, unordered_set<uint32_t> &primes, uint32_t max);
 void primeSieve(uint32_t max, vector<uint32_t> &primes);
+void primeSieve(uint64_t max, vector<uint64_t> &primes);
 void primeSieve(uint32_t min, uint32_t max, vector<uint32_t> &primes);
 void primeSieve(uint32_t max, unordered_set<uint32_t> &primes);
 bool isPrime(uint64_t prime, vector<uint32_t> &primes);
