@@ -44,6 +44,7 @@ uint32_t PE179();
 uint32_t PE187();
 
 uint64_t PE203();
+uint64_t PE204();
 
 uint32_t PE329();
 uint64_t PE348();
