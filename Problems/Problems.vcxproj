@@ -150,6 +150,7 @@
     <ClCompile Include="PE293.cpp" />
     <ClCompile Include="PE313.cpp" />
     <ClCompile Include="PE329.cpp" />
+    <ClCompile Include="PE321.cpp" />
     <ClCompile Include="PE348.cpp" />
     <ClCompile Include="PE351.cpp" />
     <ClCompile Include="PE358.cpp" />
