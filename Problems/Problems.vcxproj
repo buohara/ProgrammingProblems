@@ -151,6 +151,7 @@
     <ClCompile Include="PE313.cpp" />
     <ClCompile Include="PE329.cpp" />
     <ClCompile Include="PE321.cpp" />
+    <ClCompile Include="PE340.cpp" />
     <ClCompile Include="PE348.cpp" />
     <ClCompile Include="PE351.cpp" />
     <ClCompile Include="PE358.cpp" />
@@ -166,6 +167,8 @@
     <ClCompile Include="PE577.cpp" />
     <ClCompile Include="PE581.cpp" />
     <ClCompile Include="PE587.cpp" />
+    <ClCompile Include="PE601.cpp" />
+    <ClCompile Include="PE607.cpp" />
     <ClCompile Include="PE66.cpp" />
     <ClCompile Include="PE68.cpp" />
     <ClCompile Include="PE75.cpp" />
