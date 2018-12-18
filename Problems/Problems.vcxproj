@@ -90,6 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -171,6 +172,7 @@
     <ClCompile Include="PE607.cpp" />
     <ClCompile Include="PE66.cpp" />
     <ClCompile Include="PE68.cpp" />
+    <ClCompile Include="PE622.cpp" />
     <ClCompile Include="PE75.cpp" />
     <ClCompile Include="PE77.cpp" />
     <ClCompile Include="PE78.cpp" />

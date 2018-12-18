@@ -471,3 +471,39 @@ void factorTrialDivision(vector<uint32_t> &primes, vector<primePower> &factors, 
         }
     }
 }
+
+/**
+ * factorTrialDivision64 Get prime factors of a value by trial division. Use 64bit ints.
+ *
+ * @param primes  A list of primes to do trival division with.
+ * @param factors Out list of prime powers of value.
+ * @param value   Value to get prime factorization for.
+ */
+
+void factorTrialDivision64(vector<uint64_t> &primes, vector<primePower64> &factors, uint64_t value)
+{
+	for (uint64_t i = 0; i < primes.size(); i++)
+	{
+		uint64_t curPrime = primes[i];
+
+		if (value % curPrime == 0)
+		{
+			primePower64 newFactor;
+			newFactor.prime = curPrime;
+			newFactor.power = 0;
+
+			while (value % curPrime == 0)
+			{
+				newFactor.power++;
+				value /= curPrime;
+			}
+
+			factors.push_back(newFactor);
+		}
+
+		if (value == 1)
+		{
+			return;
+		}
+	}
+}

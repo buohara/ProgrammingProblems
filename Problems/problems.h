@@ -71,5 +71,6 @@ uint32_t PE587();
 
 uint64_t PE601();
 uint64_t PE607();
+uint64_t PE622();
 
 void TestMetropolis();
