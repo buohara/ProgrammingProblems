@@ -74,8 +74,6 @@ void DFTDirect(vector<complex<double>> &waveform, vector<complex<double>> &dft)
 
     dft.resize(waveform.size(), 0.0);
 
-    return;
-
     const double N = (double)waveform.size();
     
     for (uint32_t i = 0; i < dft.size(); i++)
@@ -95,7 +93,7 @@ void DFTDirect(vector<complex<double>> &waveform, vector<complex<double>> &dft)
  * DIT Radix-2 decimiation in time for FFT. Split input into even and odd components,
  * recursively compute N/2 size DFT, then merge results.
  *
- * @param waveform Input wave form to compute FFT DIT computation for.
+ * @param waveform Input wave form to compute FFT DIT computation for [in].
  * @param fft      Results of FFT DIT. Assumed to be empty on input [out].
  */
 
@@ -141,7 +139,7 @@ static void DIT2(vector<complex<double>> &waveform, vector<complex<double>> &fft
  * FFT Compute a simple Cooley-Tukey FFT on power-of-two size input.
  *
  * @param waveform Waveform to compute FFT for [in].
- * @param fft      Result of FFT. Assumed empty on input.
+ * @param fft      Result of FFT. Assumed empty on input [out].
  */
 
 void FFT(vector<complex<double>> &waveform, vector<complex<double>> &fft)
