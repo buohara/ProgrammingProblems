@@ -531,6 +531,7 @@ void convertBase(
 
 /**
  * geomSum Compute geometric series 1 + r + r^2 ... + r^n
+ *
  * @param  r Geometric series base.
  * @param  n Max N for geometric series.
  * @return   Sum of geometric series.
@@ -539,4 +540,27 @@ void convertBase(
 uint64_t geomSum(uint64_t r, uint64_t n)
 {
     return (pow(r, n + 1) - 1) / (r - 1);
+}
+
+/**
+ * Get Milliseconds - CPU timer function. Get milliseconds elapsed since start of epoch.
+ *
+ * @return Milliseconds since start of epoch as 64bit int.
+ */
+
+long long GetMilliseconds()
+{
+    static LARGE_INTEGER frequency;
+    static BOOL useQpc = QueryPerformanceFrequency(&frequency);
+
+    if (useQpc)
+    {
+        LARGE_INTEGER now;
+        QueryPerformanceCounter(&now);
+        return (1000LL * now.QuadPart) / frequency.QuadPart;
+    }
+    else
+    {
+        return GetTickCount();
+    }
 }

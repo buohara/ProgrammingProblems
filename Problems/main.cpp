@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    PE622();
+    TestDFT();
     printf("Done!\n");
     return 0;
 }

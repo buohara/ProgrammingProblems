@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CTFFTR2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PE100.cpp" />
     <ClCompile Include="PE104.cpp" />
@@ -185,6 +186,7 @@
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CTFFTR2.h" />
     <ClInclude Include="mpir.h" />
     <ClInclude Include="mpirxx.h" />
     <ClInclude Include="problems.h" />

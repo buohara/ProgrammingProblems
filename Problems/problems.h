@@ -16,6 +16,7 @@
 
 #include "primes.h"
 #include "utils.h"
+#include "CTFFTR2.h"
 
 using namespace std;
 

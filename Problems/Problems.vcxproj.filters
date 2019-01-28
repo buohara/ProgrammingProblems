@@ -168,6 +168,9 @@
     <ClCompile Include="PE622.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CTFFTR2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">
@@ -183,6 +186,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mpirxx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CTFFTR2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

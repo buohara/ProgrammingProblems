@@ -13,6 +13,7 @@
 #include <complex>
 #include <cmath>
 #include "mpirxx.h"
+#include <Windows.h>
 
 using namespace std;
 
@@ -121,3 +122,5 @@ void convertBase(
     vector<uint64_t> &digitsOut,
     uint64_t b2
 );
+
+long long GetMilliseconds();
