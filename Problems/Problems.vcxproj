@@ -182,6 +182,8 @@
     <ClCompile Include="PE95.cpp" />
     <ClCompile Include="PE96.cpp" />
     <ClCompile Include="primes.cpp" />
+    <ClCompile Include="quicksort.cpp" />
+    <ClCompile Include="rsa.cpp" />
     <ClCompile Include="testmetropolis.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
@@ -191,6 +193,8 @@
     <ClInclude Include="mpirxx.h" />
     <ClInclude Include="problems.h" />
     <ClInclude Include="primes.h" />
+    <ClInclude Include="quicksort.h" />
+    <ClInclude Include="rsa.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

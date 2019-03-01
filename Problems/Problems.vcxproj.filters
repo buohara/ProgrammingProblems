@@ -171,6 +171,12 @@
     <ClCompile Include="CTFFTR2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="quicksort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rsa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">
@@ -189,6 +195,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CTFFTR2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quicksort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rsa.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    TestDFT();
+    TestRSA();
     printf("Done!\n");
     return 0;
 }

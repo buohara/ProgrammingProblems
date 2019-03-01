@@ -17,6 +17,8 @@
 #include "primes.h"
 #include "utils.h"
 #include "CTFFTR2.h"
+#include "quicksort.h"
+#include "rsa.h"
 
 using namespace std;
 
