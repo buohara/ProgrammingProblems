@@ -19,6 +19,7 @@
 #include "CTFFTR2.h"
 #include "quicksort.h"
 #include "rsa.h"
+#include "huffman.h"
 
 using namespace std;
 

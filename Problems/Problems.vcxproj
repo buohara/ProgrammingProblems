@@ -133,6 +133,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CTFFTR2.cpp" />
+    <ClCompile Include="huffman.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PE100.cpp" />
     <ClCompile Include="PE104.cpp" />
@@ -189,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CTFFTR2.h" />
+    <ClInclude Include="huffman.h" />
     <ClInclude Include="mpir.h" />
     <ClInclude Include="mpirxx.h" />
     <ClInclude Include="problems.h" />

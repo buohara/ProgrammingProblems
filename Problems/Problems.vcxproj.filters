@@ -177,6 +177,9 @@
     <ClCompile Include="rsa.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="huffman.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="primes.h">
@@ -201,6 +204,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rsa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="huffman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

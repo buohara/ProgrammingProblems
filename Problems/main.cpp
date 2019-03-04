@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-    TestRSA();
+    TestHuffman();
     printf("Done!\n");
     return 0;
 }
