@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\commoninclude.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ctfftr2.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\fastmultipole.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\huffman.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\primes.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\problems.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\quicksort.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\rsa.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\utils.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ctfftr2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fastmultipole.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\huffman.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE66.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE68.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE75.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE77.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE78.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE83.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE91.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE95.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE96.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE100.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE104.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE108.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE113.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE116.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE119.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE120.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE123.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE124.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE125.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE173.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE179.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE187.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE203.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE204.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE293.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE313.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE321.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE329.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE340.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE348.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE351.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE358.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE359.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE401.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE425.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE479.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE512.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE516.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE518.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE531.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE571.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE577.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE581.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE587.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE601.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE607.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PE622.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\primes.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\quicksort.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rsa.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testmetropolis.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
