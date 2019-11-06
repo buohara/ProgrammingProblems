@@ -15,7 +15,7 @@
  * @return Zero, print result.
  */
 
-uint64_t PE123()
+void PE123()
 {
     const uint64_t maxR = (uint64_t)1e10;
     const uint64_t maxPrime = (uint64_t)1e6;
@@ -41,6 +41,4 @@ uint64_t PE123()
 
         n += 2;
     }
-
-    return 0;
 }

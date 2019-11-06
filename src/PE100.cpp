@@ -10,7 +10,7 @@
  * @return Zero. Print result.
  */
 
-uint64_t PE100()
+void PE100()
 {    
     int64_t m = 1;
     int64_t n = 0;
@@ -39,7 +39,4 @@ uint64_t PE100()
         m = 2 * m + n;
         n = mtmp;
     }
-
-    __debugbreak();
-    return 0;
 }

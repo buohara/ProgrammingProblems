@@ -8,7 +8,7 @@
  * divide the prime squares. Sum any values that can't be divided by a prime square.
  */
 
-uint64_t PE203()
+void PE203()
 {
     const uint64_t maxRows = 51;
     const uint32_t maxPrime = 1000000;
@@ -84,7 +84,4 @@ uint64_t PE203()
             sum += distinct;
         }
     }
-
-    __debugbreak();
-    return 0;
 }

@@ -38,9 +38,6 @@
     <ClInclude Include="inc\utils.h">
       <Filter>inc</Filter>
     </ClInclude>
-    <ClInclude Include="inc\sha256.h">
-      <Filter>inc</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ctfftr2.cpp">
@@ -209,9 +206,6 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\utils.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="inc\sha256.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

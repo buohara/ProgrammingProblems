@@ -5,7 +5,7 @@
  * (possibly repeated) in at least 5000 different ways.
  */
 
-uint32_t PE77()
+void PE77()
 {
     vector<uint32_t> primes;
     const uint32_t max = (uint32_t)1e4;
@@ -54,12 +54,9 @@ uint32_t PE77()
         {
             if (counts[primeCnt][amt] >= 5000)
             {
-                return amt;
+                printf("%d\n", amt);
+                return;
             }
         }
     }
-
-    // No answer found. Return 0.
-
-    return 0;
 }

@@ -45,25 +45,15 @@ uint32_t GetCoprimeVal(uint32_t val, vector<uint32_t> &primes)
         if (val % p == 0)
         {
             primeFactors.push_back(p);
-
-            while (val % p == 0)
-            {
-                val /= p;
-            }
+            while (val % p == 0) val /= p;
         }
 
-        if (val == 1)
-        {
-            break;
-        }
+        if (val == 1) break;
     }
 
     for (auto &p : primes)
     {
-        if (find(primeFactors.begin(), primeFactors.end(), p) == primeFactors.end())
-        {
-            return p;
-        }
+        if (find(primeFactors.begin(), primeFactors.end(), p) == primeFactors.end()) return p;
     }
 }
 
@@ -82,10 +72,7 @@ uint32_t ModularInverse(uint32_t val, uint32_t mod)
 {
     for (uint32_t i = 2; i < mod; i++)
     {
-        if ((val * i) % mod == 1)
-        {
-            return i;
-        }
+        if ((val * i) % mod == 1) return i;
     }
 
     return 0;
@@ -145,10 +132,7 @@ uint32_t Encrypt(string &msg)
     const char* pData = msg.data();
     string intstring;
 
-    for (uint32_t i = 0; i < l; i++)
-    {
-        intstring += to_string((uint8_t)pData[i]);
-    }
+    for (uint32_t i = 0; i < l; i++) intstring += to_string((uint8_t)pData[i]);
 
     uint32_t m = atol(intstring.c_str());
     uint32_t c = 1;

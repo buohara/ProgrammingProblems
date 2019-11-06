@@ -11,7 +11,7 @@
  * @return Zero, print result.
  */
 
-uint64_t PE173()
+void PE173()
 {
     const uint64_t maxN = 250001;
     const uint64_t maxTiles = 1000000;
@@ -35,6 +35,4 @@ uint64_t PE173()
     }
 
     cout << cnt << endl;
-    __debugbreak();
-    return 0;
 }

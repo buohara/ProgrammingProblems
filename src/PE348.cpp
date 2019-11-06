@@ -10,7 +10,7 @@
  * the minimum 5.
  */
 
-uint64_t PE348()
+void PE348()
 {
     uint64_t maxSquares = (uint64_t)1e5;
     uint64_t maxCubes = (uint64_t)1e4;
@@ -67,5 +67,4 @@ uint64_t PE348()
     }
 
     printf("%llu\n", result);
-    return result;
 }

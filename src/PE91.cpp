@@ -32,7 +32,7 @@ int32_t dot(vec2 &l1, vec2 &l2)
  * it's a right triangle.
  */
 
-uint32_t PE91()
+void PE91()
 {
     const uint32_t dim = 50;
     const uint32_t nPoints = (dim + 1) * (dim + 1);
@@ -64,5 +64,5 @@ uint32_t PE91()
         }
     }
 
-    return numTris;
+    printf("%d\n", numTris);
 }

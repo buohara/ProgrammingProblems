@@ -59,7 +59,7 @@ bool isBouncy(uint64_t val)
  * @return [description]
  */
 
-uint64_t PE113()
+void PE113()
 {
     map<uint64_t, map<uint64_t, uint64_t>> incTable;
     map<uint64_t, map<uint64_t, uint64_t>> decTable;
@@ -99,7 +99,5 @@ uint64_t PE113()
         sum -= 9;
     }
 
-    cout << sum << endl;
-    __debugbreak();
-    return 0;
+    printf("%lld\n", sum);
 }

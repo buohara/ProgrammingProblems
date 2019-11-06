@@ -17,7 +17,7 @@ struct frogNode
  * (e.g., remove the 1/2 factor from tile 1 when computing tile 2's probability). 
  */
 
-uint32_t PE329()
+void PE329()
 {
     const uint32_t max = 500;
     vector<uint32_t> primes;
@@ -101,6 +101,4 @@ uint32_t PE329()
     {
         resultProb += curProb[i];
     }
-
-    return 0;
 }

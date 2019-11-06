@@ -13,11 +13,11 @@
  * @return Zero. Print result to console.
  */
 
-uint64_t PE95()
+void PE95()
 {
     uint64_t max = (uint64_t)1e6;
     vector<vector<primePower>> primeFactors;
-    factorSieve(max, primeFactors);
+    factorSieve((uint32_t)max, primeFactors);
     vector<uint64_t> divisorSums(max + 1, 0);
     uint64_t min = UINT64_MAX;
 
@@ -36,10 +36,7 @@ uint64_t PE95()
 
         uint64_t sum = 1;
 
-        for (auto prime : primes)
-        {
-            sum *= geomSum(prime.prime, prime.power);
-        }
+        for (auto prime : primes) sum *= geomSum(prime.prime, prime.power);
 
         divisorSums[n] = sum - n;
         n++;
@@ -53,25 +50,17 @@ uint64_t PE95()
         chain.push_back(n);
         uint64_t next = divisorSums[n];
 
-        if (n % 1000 == 0)
-        {
-            cout << n << endl;
-        }
+        if (n % 1000 == 0) cout << n << endl;
 
         while (find(chain.begin(), chain.end(), next) == chain.end())
         {
-            if (next >= 1000000)
-            {
-                break;
-            }
+            if (next >= 1000000) break;
+
             chain.push_back(next);
             next = divisorSums[next];
         }
 
-        if (next == chain[0])
-        {
-            chains.push_back(chain);
-        }
+        if (next == chain[0]) chains.push_back(chain);
     }
 
     // Grab the longest chain (debugging, I happen to know its length is 28) 
@@ -83,10 +72,7 @@ uint64_t PE95()
         {
             for (auto val : chain)
             {
-                if (val < min)
-                {
-                    min = val;
-                }
+                if (val < min) min = val;
             }
 
             break;
@@ -94,6 +80,4 @@ uint64_t PE95()
     }
 
     cout << min << endl;
-    __debugbreak();
-    return 0;
 }

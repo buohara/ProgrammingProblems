@@ -41,7 +41,7 @@ uint64_t countConfigs(
  * @return Zero. Print result.
  */
 
-uint64_t PE116()
+void PE116()
 {
     vector<uint64_t> rCfgs(51, 0);
     vector<uint64_t> gCfgs(51, 0);
@@ -73,7 +73,4 @@ uint64_t PE116()
     }
 
     cout << rCfgs[50] + gCfgs[50] + bCfgs[50] << endl;
-
-    __debugbreak();
-    return 0;
 }

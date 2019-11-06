@@ -50,7 +50,7 @@ struct Power
  * @return Zero, print result.
  */
 
-uint64_t PE119()
+void PE119()
 {
     set<Power> powers;
     uint64_t seqCnt         = 0;
@@ -89,7 +89,4 @@ uint64_t PE119()
             }
         }
     }
-
-    __debugbreak();
-    return 0;
 }

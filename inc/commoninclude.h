@@ -23,3 +23,4 @@
 #include "rsa.h"
 #include "huffman.h"
 #include "fastmultipole.h"
+#include "sha256.h"

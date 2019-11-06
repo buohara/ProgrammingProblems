@@ -13,7 +13,7 @@
  * the remainders start repeating a cycle.
  */
 
-uint64_t PE120()
+void PE120()
 {
     uint64_t sum = 0;
 
@@ -35,5 +35,5 @@ uint64_t PE120()
         sum += maxR;
     }
 
-    return sum;
+    printf("%d", sum);
 }

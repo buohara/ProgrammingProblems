@@ -31,7 +31,7 @@ mpz_class squareSum(mpz_class min, mpz_class max)
  * to get the final answer.
  */
 
-uint64_t PE401()
+void PE401()
 {
     uint64_t max    = (uint64_t)1e15;
     mpz_class sum    = max;
@@ -53,6 +53,4 @@ uint64_t PE401()
     }
 
     printf("%s\n", sum.get_str().c_str());
-    __debugbreak();
-    return 0;
 } 

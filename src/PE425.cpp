@@ -181,7 +181,7 @@ void GetMinPathValues(
  * @return [description]
  */
 
-uint64_t PE425()
+void PE425()
 {
     vector<uint32_t> primes;
     const uint32_t max = (uint32_t)1e7;
@@ -216,6 +216,4 @@ uint64_t PE425()
     }
 
     printf("%llu\n", sum);
-    __debugbreak();
-    return 0;
 }

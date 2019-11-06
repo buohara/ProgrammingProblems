@@ -40,7 +40,7 @@ double getIntegrationLimit(uint32_t n)
  * increasing N until the ratio is <= 0.001 (0.1%).
  */
 
-uint32_t PE587()
+void PE587()
 {
     const double pi = 3.14159265359;
     const double lArea = (4.0 - pi) / 4.0;
@@ -70,5 +70,5 @@ uint32_t PE587()
         i++;
     }
 
-    return i;
+    printf("%d\n", i);
 }

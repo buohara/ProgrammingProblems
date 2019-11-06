@@ -10,7 +10,7 @@
  * (k1 + 1)(k2 + 1)...(Kn + 1) from N = p1^(k1)p2^(k2)...p3^(k3).
  */
 
-uint32_t PE179()
+void PE179()
 {
     uint32_t max = (uint32_t)1e7;
     vector<vector<primePower>> values;
@@ -36,5 +36,5 @@ uint32_t PE179()
         n1 = n2;
     }
 
-    return cnt;
+    printf("%d\n", cnt);
 }

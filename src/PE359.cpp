@@ -117,7 +117,7 @@ void debug359()
  * first occupant to get P(f, r). Use GMP for big integers.
  */
 
-uint64_t PE359()
+void PE359()
 {
     // From trial division, 71,328,803,586,048 = (2^27) * (3^12) 
 
@@ -144,7 +144,4 @@ uint64_t PE359()
     }
 
     printf("%s", sum.get_str().c_str());
-
-    __debugbreak();
-    return 0;
 }

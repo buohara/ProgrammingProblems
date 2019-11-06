@@ -13,7 +13,7 @@
  * division to get the digits of A.
  */
 
-uint64_t PE358()
+void PE358()
 {
     vector<uint32_t> primes;
     primeSieve(729000000, 730000000, primes);
@@ -42,6 +42,4 @@ uint64_t PE358()
             __debugbreak();
         }
     }
-
-    return 0;
 }

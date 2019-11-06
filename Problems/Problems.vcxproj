@@ -27,11 +27,9 @@
     <ClInclude Include="inc\problems.h" />
     <ClInclude Include="inc\quicksort.h" />
     <ClInclude Include="inc\rsa.h" />
-    <ClInclude Include="inc\sha256.h" />
     <ClInclude Include="inc\utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="inc\sha256.cpp" />
     <ClCompile Include="src\ctfftr2.cpp" />
     <ClCompile Include="src\fastmultipole.cpp" />
     <ClCompile Include="src\huffman.cpp" />

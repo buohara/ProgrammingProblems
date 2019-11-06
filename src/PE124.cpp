@@ -30,7 +30,7 @@ struct Radical
  * item 10,000.
  */
 
-uint32_t PE124()
+void PE124()
 {
     uint32_t max = (uint32_t)1e5;
     vector<uint32_t> primes;
@@ -71,5 +71,5 @@ uint32_t PE124()
     }
 
     sort(radicals.begin(), radicals.end());
-    return radicals[max].radical;
+    printf("%d\n", radicals[max].radical);
 }

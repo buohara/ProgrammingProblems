@@ -60,7 +60,7 @@ struct uvec2
  * @return Zero, print solution to console when found.
  */
 
-uint64_t PE108()
+void PE108()
 {
     uint64_t val = 6;
     const uint64_t max = 1000;
@@ -106,6 +106,4 @@ uint64_t PE108()
 
         val++;
     }
-
-    return 0;
 }

@@ -112,7 +112,7 @@ struct primeProduct
  * @return Sum mod 2^32 of Ns with Hamming totients.
  */
 
-uint64_t PE516()
+void PE516()
 {
     uint64_t max        = (uint64_t)1e12;
     uint64_t maxPrime   = (uint64_t)1e6;
@@ -185,5 +185,5 @@ uint64_t PE516()
         }
     }
 
-    return sum;
+    printf("%llu\n", sum);
 }

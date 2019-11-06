@@ -42,7 +42,7 @@ uint64_t geomSeriesMod(uint64_t r, uint64_t n, uint64_t m)
  * @return Print the result, return 0.
  */
 
-uint64_t PE512()
+void PE512()
 {
     uint64_t max = (uint64_t)5e8;
     uint64_t sum = 1;
@@ -79,6 +79,4 @@ uint64_t PE512()
     }
 
     printf("%llu\n", sum);
-    __debugbreak();
-    return 0;
 }

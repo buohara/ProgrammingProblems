@@ -10,7 +10,7 @@
  * to make sure nothing gets double-counted.
  */
 
-uint64_t PE125()
+void PE125()
 {
     const uint64_t max = (uint64_t)1e8;
     const uint64_t maxSq = (uint64_t)1e4;
@@ -46,5 +46,5 @@ uint64_t PE125()
         }
     }
 
-    return sum;
+    printf("%d\n", sum);
 }

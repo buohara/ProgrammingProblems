@@ -16,7 +16,7 @@ struct triple
  * all the lengths where only one triple was found.
  */
 
-uint64_t PE75()
+void PE75()
 {
     uint64_t maxLength = 1500000;
     uint64_t maxM = 867;
@@ -90,5 +90,5 @@ uint64_t PE75()
         }
     }
 
-    return sum;
+    printf("%llu\n", sum);
 }

@@ -54,7 +54,7 @@ bool isSuperPandigital(vector<uint64_t> &digits, vector<uint64_t> &bases)
  * @return Zero. Print sum to console.
  */
 
-uint64_t PE571()
+void PE571()
 {
     vector<uint64_t> digits = { 1, 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
     vector<uint64_t> bases = { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
@@ -91,6 +91,4 @@ uint64_t PE571()
     while (next_permutation(digits.begin(), digits.end()));
 
     printf("%llu\n", sum);
-    __debugbreak();
-    return 0;
 }

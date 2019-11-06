@@ -9,7 +9,7 @@
  * count if less than 1e8.
  */
 
-uint32_t PE187()
+void PE187()
 {
     uint32_t max = (uint32_t)1e8;
     uint32_t cnt = 0;
@@ -41,5 +41,5 @@ uint32_t PE187()
         }
     }
 
-    return cnt;
+    printf("%d\n", cnt);
 }

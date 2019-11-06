@@ -159,41 +159,39 @@ uint64_t BitCount(uint64_t val)
  * @return Nothing.
  */
 
-uint64_t PE622()
+void PE622()
 {
-	const uint64_t cycleLength = 60LL;
-	const uint64_t maxDeckSize = 1LL << cycleLength;
-	vector<uint64_t> divisors;
-	GetDivisorsSimple(maxDeckSize - 1, divisors);
-	uint64_t deckSum = maxDeckSize;
-
-	uint64_t deckSize = 2;
-	uint64_t badFactor = (1LL << 30LL) - 1;
-
-	while (true)
-	{
-		if (GetShuffleCycleLength(deckSize) == cycleLength)
-		{
-			break;
-		}
-
-		deckSize += 2;
-	}
-
-	for (auto &div : divisors)
-	{
-		if (GetShuffleCycleLength(div + 1) != cycleLength && div > cycleLength)
-		{
-			if (badFactor % div != 0)
-			{
-				__debugbreak();
-			}
-
-			continue;
-		}
-
-		deckSum += (div + 1);
-	}
-
-	return 0;
+    const uint64_t cycleLength = 60LL;
+    const uint64_t maxDeckSize = 1LL << cycleLength;
+    vector<uint64_t> divisors;
+    GetDivisorsSimple(maxDeckSize - 1, divisors);
+    uint64_t deckSum = maxDeckSize;
+    
+    uint64_t deckSize = 2;
+    uint64_t badFactor = (1LL << 30LL) - 1;
+    
+    while (true)
+    {
+        if (GetShuffleCycleLength(deckSize) == cycleLength)
+        {
+            break;
+        }
+        
+        deckSize += 2;
+    }
+    
+    for (auto &div : divisors)
+    {
+        if (GetShuffleCycleLength(div + 1) != cycleLength && div > cycleLength)
+        {
+            if (badFactor % div != 0)
+            {
+                __debugbreak();
+            }
+            
+            continue;
+        }
+        
+        deckSum += (div + 1);
+    }
 }

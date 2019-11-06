@@ -13,7 +13,7 @@
  * legs to get the total.
  */
 
-uint64_t PE351()
+void PE351()
 {
     const uint64_t max = (uint64_t)1e8;
     uint64_t sum = 0;
@@ -37,5 +37,4 @@ uint64_t PE351()
     }
 
     printf("%llu\n", sum);
-    return sum;
 }

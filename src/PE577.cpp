@@ -5,7 +5,7 @@
  * 3 <= N <= 12345.
  */
 
-uint64_t PE577()
+void PE577()
 {
     uint64_t sum = 0;
 
@@ -19,5 +19,5 @@ uint64_t PE577()
         }
     }
 
-    return sum;
+    printf("%llu\n", sum);
 }

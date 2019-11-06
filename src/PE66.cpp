@@ -8,7 +8,7 @@
  * x^2 - Dy^2 = 1 for D <= 1000.
  */
 
-uint64_t PE66()
+void PE66()
 {
     uint64_t maxD               = 1000;
     double maxX                 = 0;
@@ -91,5 +91,5 @@ uint64_t PE66()
         }
     }
 
-    return bestD;
+    printf("%llu\n", bestD);
 }

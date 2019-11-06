@@ -8,7 +8,7 @@
  * This code is slow (~7 mins, debug build on a Core i7-5930K).
  */
 
-uint64_t PE518()
+void PE518()
 {
     uint32_t max = (uint32_t)1e8;
     uint64_t sum = 0;
@@ -87,5 +87,5 @@ uint64_t PE518()
         }
     }
 
-    return sum;
+    printf("%llu\n", sum);
 }

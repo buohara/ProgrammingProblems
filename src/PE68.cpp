@@ -11,7 +11,7 @@
  * result string is greater than the best so far, make this string the new best string.
  */
 
-uint64_t PE68()
+void PE68()
 {
     // Initialize some data.
 
@@ -139,5 +139,5 @@ uint64_t PE68()
     } 
     while (next_permutation(digits.begin(), digits.end()) == true);
 
-    return maxString;
+    printf("%llu\n", maxString);
 }

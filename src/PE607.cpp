@@ -97,7 +97,7 @@ double GradLength(vector<double> &grad)
  * @return Zero. Print problem result.
  */
 
-uint64_t PE607()
+void PE607()
 {
     vector<double> thetas(6, 0.78539816);
     vector<double> grad(6, 0.0);
@@ -129,6 +129,4 @@ uint64_t PE607()
     }
 
     cout << "Min time: " << t1 << endl;
-    __debugbreak();
-    return 0;
 }

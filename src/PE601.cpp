@@ -32,7 +32,7 @@ uint64_t P(uint64_t s, uint64_t N)
     return cnt;
 }
 
-uint64_t PE601()
+void PE601()
 {
     uint64_t lcm = 1;
     uint64_t cnt = 0;
@@ -60,7 +60,4 @@ uint64_t PE601()
     }
 
     cout << "\n" << cnt << endl;
-
-    __debugbreak();
-    return 0;
 }

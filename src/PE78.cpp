@@ -15,7 +15,7 @@
  * @return Zero. Print answer when found.
  */
 
-uint64_t PE78()
+void PE78()
 {
     int64_t maxPent = (uint64_t)1e4;
     uint64_t maxN = (uint64_t)1e6;
@@ -48,23 +48,10 @@ uint64_t PE78()
 
         for (uint64_t m = 0; (uint64_t)abs(pentagonals[m]) <= n; m++)
         {
-            if (pentagonals[m] < 0)
-            {
-                partitions[n] -= partitions[n - abs(pentagonals[m])];
-            }
-            else 
-            {
-                partitions[n] += partitions[n - abs(pentagonals[m])];
-            }
+            if (pentagonals[m] < 0) partitions[n] -= partitions[n - abs(pentagonals[m])];
+            else partitions[n] += partitions[n - abs(pentagonals[m])];
         }
 
-        if (partitions[n] % 1000000 == 0)
-        {
-            cout << n << endl;
-            __debugbreak();
-            return n;
-        }
+        if (partitions[n] % 1000000 == 0) cout << n << endl;
     }
-
-    return 0;
 }

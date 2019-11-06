@@ -2,59 +2,58 @@
 
 using namespace std;
 
-uint64_t PE66();
-uint64_t PE68();
-uint64_t PE75();
-uint32_t PE77();
-uint64_t PE78();
-uint32_t PE83();
-uint32_t PE91();
-uint64_t PE95();
-uint32_t PE96();
+void PE66();
+void PE68();
+void PE75();
+void PE77();
+void PE78();
+void PE83();
+void PE91();
+void PE95();
+void PE96();
 
-uint64_t PE100();
-uint32_t PE104();
-uint64_t PE108();
-uint64_t PE113();
-uint64_t PE116();
-uint64_t PE119();
-uint64_t PE120();
-uint64_t PE123();
-uint32_t PE124();
-uint64_t PE125();
-uint64_t PE173();
-uint32_t PE179();
-uint32_t PE187();
+void PE100();
+void PE104();
+void PE108();
+void PE113();
+void PE116();
+void PE119();
+void PE120();
+void PE123();
+void PE124();
+void PE125();
+void PE173();
+void PE179();
+void PE187();
 
-uint64_t PE203();
-uint64_t PE204();
-uint64_t PE293();
+void PE203();
+void PE204();
+void PE293();
 
-uint64_t PE313();
-uint32_t PE329();
-int64_t PE321();
-uint64_t PE340();
-uint64_t PE348();
-uint64_t PE351();
-uint64_t PE358();
-uint64_t PE359();
+void PE313();
+void PE329();
+void PE321();
+void PE340();
+void PE348();
+void PE351();
+void PE358();
+void PE359();
 
-uint64_t PE401();
-uint64_t PE425();
-uint64_t PE479();
+void PE401();
+void PE425();
+void PE479();
 
-uint64_t PE512();
-uint64_t PE516();
-uint64_t PE518();
-uint64_t PE531();
-uint64_t PE571();
-uint64_t PE577();
-uint64_t PE581();
-uint32_t PE587();
+void PE512();
+void PE516();
+void PE518();
+void PE531();
+void PE571();
+void PE577();
+void PE581();
+void PE587();
 
-uint64_t PE601();
-uint64_t PE607();
-
-uint64_t PE622();
+void PE601();
+void PE607();
+void PE622();
 
 void TestMetropolis();

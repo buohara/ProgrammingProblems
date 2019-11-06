@@ -114,7 +114,7 @@ struct Node
  * is encountered.
  */
 
-uint32_t PE83()
+void PE83()
 {
     const uint32_t dim = 80;
     const uint32_t MAX = ~0;
@@ -191,5 +191,5 @@ uint32_t PE83()
         }
     }
 
-    return minPath;
+    printf("%d\n", minPath);
 }

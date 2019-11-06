@@ -12,7 +12,7 @@
  * want to do more problems :).
  */
 
-uint32_t PE104()
+void PE104()
 {
     mpz_class f1 = 1;
     mpz_class f2 = 1;
@@ -64,5 +64,5 @@ uint32_t PE104()
         solutionIdx++;
     }
 
-    return solutionIdx;
+    printf("%d\n", solutionIdx);
 }

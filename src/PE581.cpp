@@ -80,7 +80,7 @@ struct KSmoothGenerator
  * @return Zero. Print sum to console.
  */
 
-uint64_t PE581()
+void PE581()
 {
     vector<uint64_t> smallPrimes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
     uint64_t maxN = (uint64_t)2e12;
@@ -89,7 +89,4 @@ uint64_t PE581()
 
     uint64_t sum = kgen.triangleSum();
     cout << sum << endl;
-
-    __debugbreak();
-    return 0;
 }

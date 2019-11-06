@@ -596,7 +596,7 @@ bool solveSudoku(vector<uint32_t> &puzzleIn, vector<uint32_t> &solution)
  * above.
  */
 
-uint32_t PE96()
+void PE96()
 {
     vector<uint32_t> inPuzzle(81);
     vector<uint32_t> solution(81);
@@ -613,5 +613,5 @@ uint32_t PE96()
         sum += 100 * solution[0] + 10 * solution[1] + solution[2];
     }
 
-    return sum;
+    printf("%d\n", sum);
 }

@@ -65,7 +65,7 @@ uint64_t SolveLC(int64_t a, int64_t n, int64_t b, int64_t m)
  * @return Zero. Print answer to problem to console.
  */
 
-uint64_t PE531()
+void PE531()
 {
     uint64_t max = 1005000;
     uint64_t sum = 0;
@@ -116,6 +116,4 @@ uint64_t PE531()
     }
 
     printf("%llu\n", sum);
-    __debugbreak();
-    return 0;
 }

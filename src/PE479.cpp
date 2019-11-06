@@ -10,7 +10,7 @@
  * (1 - p^n+1) / (1 - p) - 1. Compute these terms and be careful with modular arithmetic.
  */
 
-uint64_t PE479()
+void PE479()
 {
     uint64_t max    = 1000000;
     uint64_t sum    = 0;
@@ -33,6 +33,4 @@ uint64_t PE479()
     }
 
     printf("%llu\n", sum);
-    __debugbreak();
-    return sum;
 }

@@ -16,7 +16,7 @@
  * sqrt(2) component of each of these solutions is 2N + 2 where M(N) is a triangle number.
  */
 
-int64_t PE321()
+void PE321()
 {
     const int64_t x = 3;
     const int64_t y = 2;
@@ -49,6 +49,4 @@ int64_t PE321()
     }
 
     cout << endl << sum << endl;
-    __debugbreak();
-    return 0;
 }

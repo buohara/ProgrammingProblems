@@ -10,7 +10,7 @@
  * @return Zero, print result.
  */
 
-uint64_t PE204()
+void PE204()
 {
     vector<uint64_t> primes;
     primeSieve(100, primes);
@@ -41,6 +41,4 @@ uint64_t PE204()
     }
 
     cout << hNumCnt << endl;
-    __debugbreak();
-    return 0;
 }

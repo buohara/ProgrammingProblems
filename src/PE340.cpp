@@ -8,9 +8,7 @@ struct triplet
     uint64_t z;
 };
 
-uint64_t PE340()
+void PE340()
 {
     set<triplet> triplets;
-
-    return 0;
 }

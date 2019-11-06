@@ -28,7 +28,7 @@ void GenerateAdmiss(
     }
 }
 
-uint64_t PE293()
+void PE293()
 {
     const uint64_t max = (uint64_t)1e9;
 
@@ -81,6 +81,4 @@ uint64_t PE293()
     }
 
     cout << sum << endl;
-    __debugbreak();
-    return 0;
 }

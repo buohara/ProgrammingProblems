@@ -25,7 +25,7 @@
  * @return Zero, print result to console.
  */
 
-uint64_t PE313()
+void PE313()
 {
     const uint64_t primeBnd = 1000000;
     vector<uint64_t> primes;
@@ -50,6 +50,4 @@ uint64_t PE313()
     }
 
     cout << sum << endl;
-    __debugbreak();
-    return 0;
 }
