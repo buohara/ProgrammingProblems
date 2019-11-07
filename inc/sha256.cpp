@@ -1,4 +1,5 @@
 #include "sha256.h"
+#include "openssl/sha.h"
 
 struct MsgBlock
 {
@@ -40,8 +41,8 @@ const uint32_t H0[8] =
 };
 
 static inline uint32_t rotr32(uint32_t x, uint32_t n) { return (x >> n) | (x << (32 - n)); }
-static inline uint32_t Ch(uint32_t x, uint32_t y, uint32_t z) { return (x & y) ^ (~x & z);  }
-static inline uint32_t Maj(uint32_t x, uint32_t y, uint32_t z) { return (x & y) ^ (x & z) ^ (y ^ z); }
+static inline uint32_t ch(uint32_t x, uint32_t y, uint32_t z) { return (x & y) ^ (~x & z);  }
+static inline uint32_t maj(uint32_t x, uint32_t y, uint32_t z) { return (x & y) ^ (x & z) ^ (y & z); }
 static inline uint32_t bsig0(uint32_t x) { return rotr32(x, 2) ^ rotr32(x, 13) ^ rotr32(x, 22); }
 static inline uint32_t bsig1(uint32_t x) { return rotr32(x, 6) ^ rotr32(x, 11) ^ rotr32(x, 25); }
 static inline uint32_t ssig0(uint32_t x) { return rotr32(x, 7) ^ rotr32(x, 18) ^ (x >> 3); }
@@ -71,7 +72,7 @@ static void PrintBlockedMessage(const vector<MsgBlock>& msgBlocked)
  * length bytes.
  */
 
-static void Pad(vector<uint8_t>& msg)
+static void Pad(string &msg)
 {
     uint64_t l          = (uint64_t)msg.size() * 8;
     uint64_t k          = 512 - ((l + 65LL) % 512);
@@ -79,48 +80,31 @@ static void Pad(vector<uint8_t>& msg)
 
     if (padBytes > 0)
     {
-        msg.push_back(0x80);
-        for (uint64_t i = 0; i < padBytes - 1; i++) msg.push_back(0);
+        msg.push_back((char)0x80);
+        for (uint64_t i = 0; i < padBytes - 1; i++) msg.push_back((char)0);
         
-        msg.push_back((uint8_t)(0xFF00000000000000 & l >> 56));
-        msg.push_back((uint8_t)(0x00FF000000000000 & l >> 48));
-        msg.push_back((uint8_t)(0x0000FF0000000000 & l >> 40));
-        msg.push_back((uint8_t)(0x000000FF00000000 & l >> 32));
-        msg.push_back((uint8_t)(0x00000000FF000000 & l >> 24));
-        msg.push_back((uint8_t)(0x0000000000FF0000 & l >> 16));
-        msg.push_back((uint8_t)(0x000000000000FF00 & l >> 8));
-        msg.push_back((uint8_t)(0x00000000000000FF & l));
+        msg.push_back((char)(0xFF00000000000000 & l >> 56));
+        msg.push_back((char)(0x00FF000000000000 & l >> 48));
+        msg.push_back((char)(0x0000FF0000000000 & l >> 40));
+        msg.push_back((char)(0x000000FF00000000 & l >> 32));
+        msg.push_back((char)(0x00000000FF000000 & l >> 24));
+        msg.push_back((char)(0x0000000000FF0000 & l >> 16));
+        msg.push_back((char)(0x000000000000FF00 & l >> 8));
+        msg.push_back((char)(0x00000000000000FF & l));
     }
     else
     {
-        msg.push_back((uint8_t)((0x8000000000000000 | l) >> 56));
-        msg.push_back((uint8_t)(0x00FF000000000000 & l >> 48));
-        msg.push_back((uint8_t)(0x0000FF0000000000 & l >> 40));
-        msg.push_back((uint8_t)(0x000000FF00000000 & l >> 32));
-        msg.push_back((uint8_t)(0x00000000FF000000 & l >> 24));
-        msg.push_back((uint8_t)(0x0000000000FF0000 & l >> 16));
-        msg.push_back((uint8_t)(0x000000000000FF00 & l >> 8));
-        msg.push_back((uint8_t)(0x00000000000000FF & l));
+        msg.push_back((char)((0x8000000000000000 | l) >> 56));
+        msg.push_back((char)(0x00FF000000000000 & l >> 48));
+        msg.push_back((char)(0x0000FF0000000000 & l >> 40));
+        msg.push_back((char)(0x000000FF00000000 & l >> 32));
+        msg.push_back((char)(0x00000000FF000000 & l >> 24));
+        msg.push_back((char)(0x0000000000FF0000 & l >> 16));
+        msg.push_back((char)(0x000000000000FF00 & l >> 8));
+        msg.push_back((char)(0x00000000000000FF & l));
     }
 
     assert((msg.size() * 8) % 512 == 0);
-}
-
-/**
- * TestPad - For debugging. Given a test message 'abc' in ascii, execute pad routine and print result.
- */
-
-static void TestPad()
-{
-    vector<uint8_t> msg = { 'a', 'b', 'c' };
-
-    printf("Orig message:\n");
-    for (uint32_t i = 0; i < msg.size(); i++) printf("0x%lx ", msg[i]);
-
-    Pad(msg);
-
-    printf("Padded message:\n");
-    for (uint32_t i = 0; i < msg.size(); i++) printf("0x%lx ", msg[i]);
 }
 
 /**
@@ -168,7 +152,6 @@ static void ParseBlocks(const vector<uint8_t>& msgPadded, vector<MsgBlock>& msgB
 
 void CompuateSHA256(const vector<MsgBlock>& blockedMessage, SHA256Hash &hash)
 {
-
 }
 
 /**
@@ -177,13 +160,26 @@ void CompuateSHA256(const vector<MsgBlock>& blockedMessage, SHA256Hash &hash)
 
 void TestSHA256()
 {
+    // Internal version.
+
     vector<MsgBlock> msgBlocked;
 
-    vector<uint8_t> msg = { 'a', 'b', 'c' };
-    Pad(msg);
+    string str("Sample Text");
 
-    ParseBlocks(msg, msgBlocked);
+    Pad(str);
+
+    ParseBlocks(str, msgBlocked);
     PrintBlockedMessage(msgBlocked);
+
+    // OpenSSL validation.
+
+    unsigned char hash[SHA256_DIGEST_LENGTH];
+
+    SHA256_CTX sha256;
+    SHA256_Init(&sha256);
+    SHA256_Update(&sha256, str.c_str(), str.size());
+
+    SHA256_Final(hash, &sha256);
 
     __debugbreak();
 }
