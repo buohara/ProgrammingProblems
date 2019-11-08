@@ -1,6 +1,8 @@
 #include "sha256.h"
 #include "openssl/sha.h"
 
+// SHA256 Implementation here based on FIPS publication here: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
+
 struct MsgBlock
 {
     uint32_t words[16];
@@ -68,43 +70,47 @@ static void PrintBlockedMessage(const vector<MsgBlock>& msgBlocked)
  * Pad - Given an input message, pad with zeros and append message length in bits such
  * that total message length is a multiple of 512 bits.
  *
- * @param msg [in/out] Message to pad. Message will be modified with appended zeros and message
- * length bytes.
+ * @param msg       [in] Original message to pad.
+ * @param msgPadded [out] Input message with padding appended.
  */
 
-static void Pad(string &msg)
+static void Pad(const string &msg, vector<uint8_t>& msgPadded)
 {
+    assert(msgPadded.size() == 0);
+
+    for (auto& c : msg) msgPadded.push_back((uint8_t)c);
+
     uint64_t l          = (uint64_t)msg.size() * 8;
     uint64_t k          = 512 - ((l + 65LL) % 512);
     uint64_t padBytes   = (k + 1) / 8;
 
     if (padBytes > 0)
     {
-        msg.push_back((char)0x80);
-        for (uint64_t i = 0; i < padBytes - 1; i++) msg.push_back((char)0);
+        msgPadded.push_back((char)0x80);
+        for (uint64_t i = 0; i < padBytes - 1; i++) msgPadded.push_back((char)0);
         
-        msg.push_back((char)(0xFF00000000000000 & l >> 56));
-        msg.push_back((char)(0x00FF000000000000 & l >> 48));
-        msg.push_back((char)(0x0000FF0000000000 & l >> 40));
-        msg.push_back((char)(0x000000FF00000000 & l >> 32));
-        msg.push_back((char)(0x00000000FF000000 & l >> 24));
-        msg.push_back((char)(0x0000000000FF0000 & l >> 16));
-        msg.push_back((char)(0x000000000000FF00 & l >> 8));
-        msg.push_back((char)(0x00000000000000FF & l));
+        msgPadded.push_back((char)(0xFF00000000000000 & l >> 56));
+        msgPadded.push_back((char)(0x00FF000000000000 & l >> 48));
+        msgPadded.push_back((char)(0x0000FF0000000000 & l >> 40));
+        msgPadded.push_back((char)(0x000000FF00000000 & l >> 32));
+        msgPadded.push_back((char)(0x00000000FF000000 & l >> 24));
+        msgPadded.push_back((char)(0x0000000000FF0000 & l >> 16));
+        msgPadded.push_back((char)(0x000000000000FF00 & l >> 8));
+        msgPadded.push_back((char)(0x00000000000000FF & l));
     }
     else
     {
-        msg.push_back((char)((0x8000000000000000 | l) >> 56));
-        msg.push_back((char)(0x00FF000000000000 & l >> 48));
-        msg.push_back((char)(0x0000FF0000000000 & l >> 40));
-        msg.push_back((char)(0x000000FF00000000 & l >> 32));
-        msg.push_back((char)(0x00000000FF000000 & l >> 24));
-        msg.push_back((char)(0x0000000000FF0000 & l >> 16));
-        msg.push_back((char)(0x000000000000FF00 & l >> 8));
-        msg.push_back((char)(0x00000000000000FF & l));
+        msgPadded.push_back((char)((0x8000000000000000 | l) >> 56));
+        msgPadded.push_back((char)(0x00FF000000000000 & l >> 48));
+        msgPadded.push_back((char)(0x0000FF0000000000 & l >> 40));
+        msgPadded.push_back((char)(0x000000FF00000000 & l >> 32));
+        msgPadded.push_back((char)(0x00000000FF000000 & l >> 24));
+        msgPadded.push_back((char)(0x0000000000FF0000 & l >> 16));
+        msgPadded.push_back((char)(0x000000000000FF00 & l >> 8));
+        msgPadded.push_back((char)(0x00000000000000FF & l));
     }
 
-    assert((msg.size() * 8) % 512 == 0);
+    assert((msgPadded.size() * 8) % 512 == 0);
 }
 
 /**
@@ -150,8 +156,88 @@ static void ParseBlocks(const vector<uint8_t>& msgPadded, vector<MsgBlock>& msgB
  * @param hash           [out] Computed hash of message.
  */
 
-void CompuateSHA256(const vector<MsgBlock>& blockedMessage, SHA256Hash &hash)
+static void ComputeSHA256(const vector<MsgBlock>& blockedMessage, SHA256Hash &hash)
 {
+    uint32_t W[64];
+
+    uint32_t a  = H0[0];
+    uint32_t b  = H0[1];
+    uint32_t c  = H0[2];
+    uint32_t d  = H0[3];
+    uint32_t e  = H0[4];
+    uint32_t f  = H0[5];
+    uint32_t g  = H0[6];
+    uint32_t h  = H0[7];
+
+    uint32_t t1 = 0;
+    uint32_t t2 = 0;
+
+    memcpy(&hash.words[0], &H0[0], 8 * sizeof(uint32_t));
+
+    for (auto& block : blockedMessage)
+    {
+        for (uint32_t i = 0; i < 4; i++)
+        {
+            W[4 * i]        = (uint8_t)((block.words[i] & 0xFF) >> 24);
+            W[4 * i + 1]    = (uint8_t)((block.words[i] & 0xFF) >> 16);
+            W[4 * i + 2]    = (uint8_t)((block.words[i] & 0xFF) >> 8);
+            W[4 * i + 3]    = (uint8_t)((block.words[i] & 0xFF));
+        }
+
+        for (uint32_t i = 16; i < 64; i++) W[i] = ssig1(W[i - 2]) + W[i - 16] + ssig0(W[i - 15]) + W[i - 16];
+
+        for (uint32_t i = 0; i < 64; i++)
+        {
+            t1  = h + bsig1(e) + ch(e, f, g) + constants[i] + W[i];
+            t2  = bsig0(a) + maj(a, b, c);
+            h   = g;
+            g   = f;
+            f   = e;
+            e   = d + t1;
+            d   = c;
+            c   = b;
+            b   = a;
+            a   = t1 + t2;
+        }
+
+        hash.words[0] = a + hash.words[0];
+        hash.words[1] = b + hash.words[1];
+        hash.words[2] = c + hash.words[2];
+        hash.words[3] = d + hash.words[3];
+        hash.words[4] = e + hash.words[4];
+        hash.words[5] = f + hash.words[5];
+        hash.words[6] = g + hash.words[6];
+        hash.words[7] = h + hash.words[7];
+    }
+}
+
+static void CompareHashes(const SHA256Hash &internalHash, const unsigned char openSSLHash[SHA256_DIGEST_LENGTH])
+{
+    const uint32_t numInternalHashWords = 8;
+
+    for (uint32_t i = 0; i < numInternalHashWords; i++)
+    {
+        unsigned char byte1 = (unsigned char)(internalHash.words[i] & (0xFF000000) >> 24);
+        unsigned char byte2 = (unsigned char)(internalHash.words[i] & (0x00FF0000) >> 16);
+        unsigned char byte3 = (unsigned char)(internalHash.words[i] & (0x0000FF00) >> 8);
+        unsigned char byte4 = (unsigned char)(internalHash.words[i] & (0x000000FF));
+
+        assert(byte1 == openSSLHash[4 * i]);
+        assert(byte2 == openSSLHash[4 * i + 1]);
+        assert(byte3 == openSSLHash[4 * i + 2]);
+        assert(byte4 == openSSLHash[4 * i + 3]);
+    }
+}
+
+void SHA256(const string& msg, SHA256Hash& hash)
+{
+    vector<uint8_t> msgPadded;
+    Pad(msg, msgPadded);
+
+    vector<MsgBlock> msgBlocked;
+    ParseBlocks(msgPadded, msgBlocked);
+
+    ComputeSHA256(msgBlocked, hash);
 }
 
 /**
@@ -160,26 +246,26 @@ void CompuateSHA256(const vector<MsgBlock>& blockedMessage, SHA256Hash &hash)
 
 void TestSHA256()
 {
-    // Internal version.
+    string str("");
+    SHA256Hash hash1;
 
-    vector<MsgBlock> msgBlocked;
+    // Hash from this implementation.
 
-    string str("Sample Text");
+    SHA256(str, hash1);
 
-    Pad(str);
+    // OpenSSL hash.
 
-    ParseBlocks(str, msgBlocked);
-    PrintBlockedMessage(msgBlocked);
-
-    // OpenSSL validation.
-
-    unsigned char hash[SHA256_DIGEST_LENGTH];
+    unsigned char hash2[SHA256_DIGEST_LENGTH];
 
     SHA256_CTX sha256;
     SHA256_Init(&sha256);
     SHA256_Update(&sha256, str.c_str(), str.size());
 
-    SHA256_Final(hash, &sha256);
+    SHA256_Final(hash2, &sha256);
+
+    // Compare
+
+    CompareHashes(hash1, hash2);
 
     __debugbreak();
 }
